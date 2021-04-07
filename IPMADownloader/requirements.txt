@@ -1,2 +1,2 @@
 requests==2.25.1
-typeguard==2.11.1
+typeguard==2.12.0
