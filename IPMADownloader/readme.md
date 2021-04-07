@@ -5,13 +5,18 @@ IPMADownloader can let's community members store and log IPMA data on their own 
 The scripts are meant to run every 2 hours, for this `crontab` is used.
 
 # installation
+## update your pi
+this may take a long time
+```sudo apt update```
+```sudo apt upgrade```
 
+## setup the scripts
 1.  clone the repository
     `cd ~`
-    `git clone nogiets`
+    `git clone https://github.com/Sani7/WeatherStation.git`
 2.  install packages
     ```
-    cd ~/WeatherStation/IPMADownloader/scripts/
+    cd ~/WeatherStation/IPMADownloader/
     ```
     ```
     pip3 install -r requirements.txt
