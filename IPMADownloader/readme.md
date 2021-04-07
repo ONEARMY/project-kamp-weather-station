@@ -24,7 +24,7 @@ this may take a long time
     answer `Y` or `yes` if prompted
 3.  setup crontab
     open crontab using
-    `chrontab -e`
+    `crontab -e`
     then append to the bottom of the file the following
     ```cron
     0 */2 * * * ~/WeatherStation/IPMADownloader/scripts/get_ipma_api_data.sh
