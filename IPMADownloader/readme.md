@@ -12,8 +12,8 @@ this may take a long time
 
 ## setup the scripts
 1.  clone the repository
-    `cd ~`
-    `git clone https://github.com/Sani7/WeatherStation.git`
+    ```cd ~```
+    ```git clone https://github.com/Sani7/WeatherStation.git```
 2.  install packages
     ```
     cd ~/WeatherStation/IPMADownloader/
