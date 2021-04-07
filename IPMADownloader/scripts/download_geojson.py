@@ -121,9 +121,8 @@ class station_logger:
             )
 
             # if there are coordinates wanted but they are not found in the geojson file this is printed
-            if not_available := list_difference(
-                filtered_coordinates, self.wanted_coordinates
-            ):
+            not_available = list_difference(filtered_coordinates, self.wanted_coordinates)
+            if not_available:
                 print(
                     "❌ these stations are not available:",
                     not_available,
