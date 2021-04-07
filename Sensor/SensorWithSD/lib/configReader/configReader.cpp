@@ -1,4 +1,4 @@
-#include "configReader.h"
+#include "configReader.hpp"
 
 SDFile configFile;        // Create configFile instance from the SD library
 
