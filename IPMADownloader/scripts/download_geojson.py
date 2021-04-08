@@ -91,9 +91,7 @@ class station_logger:
 
         self._save_to_json(db)
 
-    def _get_json(
-        self,
-    ) -> Dict[str, Union[str, list]]:
+    def _get_json(self,) -> Dict[str, Union[str, list]]:
         """
         Downloads and processes the geojson file downloaded form self.url.
         Processing is done by stripping all locations which are not in self.wanted_coordinates.
@@ -121,11 +119,12 @@ class station_logger:
             )
 
             # if there are coordinates wanted but they are not found in the geojson file this is printed
-            not_available = list_difference(filtered_coordinates, self.wanted_coordinates)
+            not_available = list_difference(
+                filtered_coordinates, self.wanted_coordinates
+            )
             if not_available:
                 print(
-                    "❌ these stations are not available:",
-                    not_available,
+                    "❌ these stations are not available:", not_available,
                 )
 
             return data

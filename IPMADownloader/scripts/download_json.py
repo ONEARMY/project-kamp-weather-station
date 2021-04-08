@@ -85,8 +85,7 @@ class station_logger:
                 not_available = self.wanted_stations - available_stations
                 if not_available:
                     print(
-                        "❌ these stations are not available:",
-                        not_available,
+                        "❌ these stations are not available:", not_available,
                     )
                 # compute which stations do not need to be stored
                 stations_to_be_removed = available_stations - self.wanted_stations
@@ -95,8 +94,7 @@ class station_logger:
                 # TODO I do not know if it best do have a tuple or a list here
                 tuple(
                     map(
-                        lambda station: data[date].pop(station),
-                        stations_to_be_removed,
+                        lambda station: data[date].pop(station), stations_to_be_removed,
                     )
                 )
 
@@ -117,3 +115,4 @@ class station_logger:
 if __name__ == "__main__":
     logger = station_logger()
     logger.new_request()
+    print(datetime.now(), "succes")
