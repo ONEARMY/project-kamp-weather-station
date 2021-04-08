@@ -1,4 +1,4 @@
-/IPMADowloader/data/*
+./IPMADowloader/data/*
 *_log.txt
 cron.txt
 Concept.odg
