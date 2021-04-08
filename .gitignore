@@ -1,8 +1,8 @@
-./IPMADowloader/data/*
+IPMADowloader/data/*
 *_log.txt
 cron.txt
-./Concept.odg
-./Concept1.png
-./Concept2.png
-./Database/
-./Sensor/
+Concept.odg
+Concept1.png
+Concept2.png
+Database/
+Sensor/
