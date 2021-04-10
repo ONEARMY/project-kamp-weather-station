@@ -61,7 +61,7 @@ import os
 import requests
 import sys
 from typeguard import typechecked
-from typing import Union, Set, Dict, List, Any
+from typing import Union, Set, Dict, List, Any, Optional
 
 
 @typechecked
@@ -103,30 +103,28 @@ class station_logger:
             else:
                 self._add_to_json_db(get_function())
 
-    def _save_to_json(
-        self,
-        data: Dict[str, Any],
-    ) -> None:
+    def _save_to_json(self, data: Dict[str, Any]) -> None:
         """
         Is used for both json and geojson.
         """
         with io.open(self.save_path, "w") as f:
             json.dump(data, f, sort_keys=True, indent=4)
+        return
 
     def _add_to_json_db(
         self,
-        # data: Dict[str, Union[Dict[str, Dict[str, Union[int, float]]], None]],
-        data: Dict[str, Union[dict, None]],
+        data: Dict[str, Optional[Dict[Any, Any]]],
     ) -> None:
         with io.open(self.save_path, "r") as f:
             db = json.load(f)
 
         db.update(data)
         self._save_to_json(db)
+        return
 
     def _add_to_geoj_db(
         self,
-        data: Dict[str, Union[str, list]],
+        data: Dict[str, Union[str, List[Any]]],
     ) -> None:
         with io.open(self.geoj_save_file, "r") as f:
             db = json.load(f)
@@ -135,6 +133,7 @@ class station_logger:
         db["features"] = list_unique(db["features"])
 
         self._save_to_json(db)
+        return
 
     def _get_json(
         self,
