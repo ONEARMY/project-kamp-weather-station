@@ -6,8 +6,8 @@ if [ ! -d ~/WeatherStation/IPMADownloader/data ]; then
   mkdir -p ~/WeatherStation/IPMADownloader/data;
 fi
 
-python3 download_json.py >> ../json_log.txt
-python3 download_geojson.py >> ../geojson_log.txt
+python3 retrieve_station_data.py 0 >> ../json_log.txt
+python3 retrieve_station_data.py 1 >> ../geoj_log.txt
 
 # write date to file so that a malfunction can be located if needed
 echo $(date) >> ../cron.txt
