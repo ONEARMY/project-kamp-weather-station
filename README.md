@@ -2,6 +2,8 @@
 
 The repo for all the things Weather Station.
 
+This readme is just a quick recap, please refer to the Wiki for more details!
+
 
 ## Contributing
 
