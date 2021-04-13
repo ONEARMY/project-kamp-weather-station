@@ -1,0 +1,6 @@
+IPMADowloader/data/*
+*_log.txt
+*.json
+*.geojson
+*.pyc
+IPMADownloader/cron.txt

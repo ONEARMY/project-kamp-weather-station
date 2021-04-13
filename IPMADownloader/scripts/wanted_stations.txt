@@ -1,0 +1,7 @@
+# TODO could become a csv in the future
+{
+    "6213019",  # Santa Comba Dão
+    "6213616",  # Mortágua / Aeródromo
+    "6213021",  # Tondela, Caramulinho
+    "6213012",  # Carregal do Sal
+}
