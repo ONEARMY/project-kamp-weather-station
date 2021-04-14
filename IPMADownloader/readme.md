@@ -16,11 +16,11 @@ this may take a long time
     cd ~
     ```
     ```
-    git clone https://github.com/Sani7/WeatherStation.git
+    git clone https://github.com/ONEARMY/project-kamp-weather-station.git
     ```
 2.  install packages
     ```
-    cd ~/WeatherStation/IPMADownloader/
+    cd ~/project-kamp-weather-station/IPMADownloader/
     ```
     ```
     pip3 install -r requirements.txt
@@ -31,6 +31,6 @@ this may take a long time
     `crontab -e`
     then append to the bottom of the file the following
     ```cron
-    0 */2 * * * ~/WeatherStation/IPMADownloader/scripts/get_ipma_api_data.sh
+    0 */2 * * * ~/project-kamp-weather-station/IPMADownloader/scripts/get_ipma_api_data.sh
     ```
     this will run `get_ipma_api_data.sh` every 2 hours while the pi is powered.
