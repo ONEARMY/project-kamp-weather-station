@@ -1,4 +1,4 @@
-# ProjectKamp's weather station development
+# ProjectKamp's Weather Station development
 
 The repo for all the things Weather Station.
 
