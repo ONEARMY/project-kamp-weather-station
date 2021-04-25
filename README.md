@@ -2,7 +2,7 @@
 
 The repo for all the things Weather Station.
 
-This readme is just a quick recap, please refer to the Wiki for more details!
+This readme is just a quick recap, please refer to the [Wiki](https://github.com/ONEARMY/project-kamp-weather-station/wiki) for more details!
 
 
 ## Contributing
