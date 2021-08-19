@@ -1,0 +1,101 @@
+esphome:
+  name: solar_sensor
+  platform: ESP8266
+  board: d1_mini
+
+wifi:
+  ssid: BASEKAMP
+  password: CONTAINER
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Solar Sensor Fallback Hotspot"
+    password: "password"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+
+# Required for the weatherproof temperature sensor to work
+dallas:
+  - pin: GPIO14
+
+# to tell Home Assistant wether the node is online or not
+binary_sensor:
+  - platform: status
+    name: "Solar Sensor"  
+
+i2c:
+  sda: D2
+  scl: D1
+  scan: True
+
+# to measure Temperature Pressure and humidity
+  - platform: bme280
+    temperature:
+      name: "BME280 Temperature"
+      id: bme280_temperature
+    pressure:
+      name: "BME280 Pressure"
+      id: bme280_pressure
+    humidity:
+      name: "BME280 Relative Humidity"
+      id: bme280_humidity
+    address: 0x76
+
+# to measure Temperature in the ground
+  - platform: dallas
+    address: 0x6201203835259D28
+    name: "Outside Temperature"
+
+# to measure all power information
+  - platform: ina219
+    address: 0x40
+    shunt_resistance: 0.1 ohm
+    current:
+      name: "INA219 Current"
+    power:
+      name: "INA219 Power"
+    bus_voltage:
+      name: "INA219 Bus Voltage"
+    shunt_voltage:
+      name: "INA219 Shunt Voltage"
+    max_voltage: 32.0V
+    max_current: 3.2A
+    update_interval: 60s
+
+# to measure light
+  - platform: bh1750
+    name: "Illuminance"
+    address: 0x23
+    measurement_time: 31
+    update_interval: 60s
+
+# to measure soil 
+  - platform: adc
+    pin: A0
+    name: "Soil"
+    update_interval: 60s
+
+# to get the device out of depp sleep if you want to update it.
+mqtt:
+  broker: 192.168.6.123
+  username: dave
+  password: project kamp
+  on_message:
+    topic: container/ota_mode
+    payload: 'ON'
+    then:
+      - deep_sleep.prevent: deep_sleep_1
+
+# to make the device go into deep sleep
+deep_sleep:
+  run_duration: 60s
+  sleep_duration: 10min
+  id: deep_sleep_1
